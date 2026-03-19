@@ -1,20 +1,14 @@
 package com.example.basketapp
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.basketapp.ui.theme.BasketAppTheme
+
 
 class MainActivity : ComponentActivity() {
     private var pontuacaoTimeA: Int = 0
@@ -37,13 +31,53 @@ class MainActivity : ComponentActivity() {
         val bTLivreTimeB: Button = findViewById(R.id.tiroLivreB)
         val bReiniciarPartida: Button = findViewById(R.id.reiniciarPartida)
 
-        bTresPontosTimeA.setOnClickListener { adicionarPontos(3, "A") }
-        bDoisPontosTimeA.setOnClickListener { adicionarPontos(2, "A") }
-        bTLivreTimeA.setOnClickListener { adicionarPontos(1, "A") }
-        bTresPontosTimeB.setOnClickListener { adicionarPontos(3, "B") }
-        bDoisPontosTimeB.setOnClickListener { adicionarPontos(2, "B") }
-        bTLivreTimeB.setOnClickListener { adicionarPontos(1, "B") }
+        bTresPontosTimeA.setOnClickListener { tentarJogada(3, "A") }
+        bDoisPontosTimeA.setOnClickListener { tentarJogada(2, "A") }
+        bTLivreTimeA.setOnClickListener { tentarJogada(1, "A") }
+        bTresPontosTimeB.setOnClickListener { tentarJogada(3, "B") }
+        bDoisPontosTimeB.setOnClickListener { tentarJogada(2, "B") }
+        bTLivreTimeB.setOnClickListener { tentarJogada(1, "B") }
         bReiniciarPartida.setOnClickListener { reiniciarPartida() }
+    }
+
+    fun tentarJogada(pontuacao: Int, time: String) {
+        setContentView(R.layout.diceroll)
+
+        val bRoll: Button = findViewById(R.id.rolar)
+        val imgDado: ImageView = findViewById(R.id.dado)
+        var toastTxt: String
+        bRoll.setOnClickListener {
+            val result = (1..6).random()
+            val imageResource = when (result) {
+                1 -> R.drawable.dice_1
+                2 -> R.drawable.dice_2
+                3 -> R.drawable.dice_3
+                4 -> R.drawable.dice_4
+                5 -> R.drawable.dice_5
+                else -> R.drawable.dice_6
+            }
+
+            imgDado.setImageResource(imageResource)
+            imgDado.contentDescription = result.toString()
+
+            // Lógica de entrar: O dado precisará estar no intervalo [1, 6 - pontuação_da_jogada]
+            // Dessa forma a cesta de 3 pontos terá 1/2 chance, a de 2 2/3 e o tiro livre 5/6
+            if(result in (1..(6-pontuacao))) {
+                // Jogada deu certo, adicionar pontuação
+                adicionarPontos(pontuacao, time)
+                toastTxt = "Valor do dado: $result. Dentro."
+            } else {
+                // Caso contrário jogada deu errado, não fazer nada
+                toastTxt = "Valor do dado: $result. Fora."
+            }
+
+            Toast.makeText(this, toastTxt, Toast.LENGTH_SHORT).show()
+
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                setContentView(R.layout.layout_main)
+            }, 1000)
+        }
     }
 
     fun adicionarPontos(pontos: Int, time: String) {
