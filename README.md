@@ -1,6 +1,6 @@
 # BasketApp 🏀
 
-**Autores:** Breno Jalmir de Medeiros Almeida, Felipe Madureira de Almeida
+**Autores:** Breno Jalmir de Medeiros Almeida e Felipe Madureira de Almeida
 
 **Descrição:** Aplicativo Android para simulação de placar de basquete.
 
