@@ -24,7 +24,7 @@
 
 ## Requisitos
 
-- Android Studio atualizado
+- Android Studio atualizado (preferencialmente panda 2)
 - SDK Android instalado para API 36
 - JDK 21 disponível no ambiente
 - Dispositivo Android ou emulador configurado
@@ -35,21 +35,19 @@
 git clone <url-do-repositorio>
 cd BasketApp
 
-
-### 2. Build do projeto (Windows)
-### 3. Instalar e executar no dispositivo/emulador
+2. Build do projeto (Windows)
+3. Instalar e executar no dispositivo/emulador
 Com um dispositivo/emulador já conectado:
 
 Depois abra o app BasketApp no dispositivo.
 
-### 4. Rodar testes
+4. Rodar testes
 Testes unitários:
 
 Testes instrumentados (dispositivo/emulador conectado):
 
-### 5. Gerar APK de debug
+5. Gerar APK de debug
 APK gerado em:
-
 app/build/outputs/apk/debug/app-debug.apk
 
 Estrutura principal
