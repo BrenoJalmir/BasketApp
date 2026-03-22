@@ -67,6 +67,8 @@ class MainActivity : ComponentActivity() {
             imgDado.contentDescription = result.toString()
 
             val toastTxt: String
+            // Lógica de entrar: O dado precisará estar no intervalo [1, 6 - pontuação_da_jogada]
+            // Dessa forma a cesta de 3 pontos terá 1/2 chance, a de 2 2/3 e o tiro livre 5/6
             if (result in 1..(6 - pontuacao)) {
                 adicionarPontos(pontuacao, time)
                 toastTxt = "Valor do dado: $result. Dentro."
