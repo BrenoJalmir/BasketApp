@@ -1,4 +1,4 @@
-# BasketApp
+# BasketApp 🏀
 
 **Autores:** Breno Jalmir de Medeiros Almeida, Felipe Madureira de Almeida
 
@@ -49,7 +49,7 @@ No Linux/macOS:
 ./gradlew build
 ```
 
-3. Instalar e executar no dispositivo/emulador
+### 3. Instalar e executar no dispositivo/emulador
 Com um dispositivo/emulador já conectado:
 
 No Windows:
