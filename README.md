@@ -1,3 +1,8 @@
+Breno Jalmir de Medeiros Almeida
+Felipe Madureira de Almeida
+
+
+
 BasketApp
 Aplicativo Android para simulação de placar de basquete.
 
