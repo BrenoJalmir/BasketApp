@@ -4,6 +4,8 @@
 
 **Descrição:** Aplicativo Android para simulação de placar de basquete.
 
+**Disciplina** Desenvolvimento de Sistemas para Dispositivos Móveis.
+
 ## Identificação do projeto
 
 - **Projeto:** `BasketApp`
@@ -66,7 +68,7 @@ Depois abra o app **BasketApp** no dispositivo.
 
 
 ## Estrutura principal
-Módulo principal Android: build.gradle.kts
-Configuração de versões: libs.versions.toml
-Gradle Wrapper: gradle-wrapper.properties
-Configuração do projeto: settings.gradle.kts
+- Módulo principal Android: build.gradle.kts
+- Configuração de versões: libs.versions.toml
+- Gradle Wrapper: gradle-wrapper.properties
+- Configuração do projeto: settings.gradle.kts
