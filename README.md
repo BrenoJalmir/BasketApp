@@ -32,23 +32,26 @@
 ## Como rodar o projeto
 
 ### 1. Clonar e entrar na pasta
+git clone <url-do-repositorio>
+cd BasketApp
 
 
-2. Build do projeto (Windows)
-3. Instalar e executar no dispositivo/emulador
+### 2. Build do projeto (Windows)
+### 3. Instalar e executar no dispositivo/emulador
 Com um dispositivo/emulador já conectado:
 
 Depois abra o app BasketApp no dispositivo.
 
-4. Rodar testes
+### 4. Rodar testes
 Testes unitários:
 
 Testes instrumentados (dispositivo/emulador conectado):
 
-5. Gerar APK de debug
+### 5. Gerar APK de debug
 APK gerado em:
 
 app/build/outputs/apk/debug/app-debug.apk
+
 Estrutura principal
 Módulo principal Android: build.gradle.kts
 Configuração de versões: libs.versions.toml
